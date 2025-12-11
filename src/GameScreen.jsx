@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 const GameScreen = () => {
   const [score, setScore] = useState(0);
-  const moleHoles = Array.from({ length: 9 }, (index) => index);
-  const [clickedMole, setClickedMole] = useState(() => {
-    Math.floor(Math.random() * moleHoles.length);
-  });
+  const moleHoles = Array.from({ length: 9 }, (_, index) => index);
+  console.log(moleHoles);
+  const [clickedMole, setClickedMole] = useState(() =>
+    Math.floor(Math.random() * moleHoles.length)
+  );
   const [timeRemaining, setTimeRemaining] = useState(30);
 
   const pickRandomMole = () => {
